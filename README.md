@@ -83,6 +83,7 @@ The following sensors can be monitored
   Attribute data includes the IP of the USG
   
 **wlan**
+
   The status of the Wifi Access Points
   Attribute data includes number of guests
   
@@ -98,6 +99,6 @@ The following sensors can be monitored
   
 ### In Development - Notes
 
-The sensor requires the latest version of PyUnifi - waiting for a pull request to update the version number for this can be pulled into HA.
+The sensor requires the latest version of PyUnifi - waiting for a pull request to update the version number for this so it can be pulled into HA. If you have an older version of the library installed in the meantime an exception will be thrown when the health data access call is attempted.
 
 The sensor currently accesses the controller everytime an individual sensor is updated. This should be optimised to access once and then feed data to the other appropriate sensors to reduce overhead.
