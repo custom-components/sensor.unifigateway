@@ -82,6 +82,11 @@ The following sensors can be monitored
   The status of the LAN sub-system
   Attribute data includes the IP of the USG
   
+**wan**
+
+  The status of the WAN sub-system
+  Attribute data includes the WAN IP (e.g. dynamic IP as allocated by your ISP)
+  
 **wlan**
 
   The status of the Wifi Access Points
