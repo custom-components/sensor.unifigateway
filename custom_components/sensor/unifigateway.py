@@ -15,12 +15,12 @@ import homeassistant.helpers.config_validation as cv
 from homeassistant.util import Throttle
 from homeassistant.components.sensor import PLATFORM_SCHEMA
 from homeassistant.const import (
-    CONF_NAME, CONF_HOST, CONF_USERNAME, CONF_PASSWORD, 
+    CONF_NAME, CONF_HOST, CONF_USERNAME, CONF_PASSWORD,
     CONF_MONITORED_CONDITIONS, CONF_VERIFY_SSL)
 
 from pyunifi.controller import APIError
 
-__version__ = '0.1.0'
+__version__ = '0.2.0'
 REQUIREMENTS = ['pyunifi==2.15']
 
 _LOGGER = logging.getLogger(__name__)
@@ -143,7 +143,7 @@ class UnifiGatewaySensor(Entity):
           for index, alert in enumerate(unarchived_alerts,start=1):
             if not alert['archived']:
               self._attributes[str(index)] = alert
-              
+
           self._state = len(self._attributes)
 
         elif self._sensor == SENSOR_FIRMWARE:
@@ -162,15 +162,20 @@ class UnifiGatewaySensor(Entity):
                 self._state += 1
 
         else:
-          # get_healthinfo() call made for each of 4 sensors - should only be for 1 
+          # get_healthinfo() call made for each of 4 sensors - should only be for 1
           try:
-              self._alldata = self._ctrl.get_healthinfo()
+              # Check that function exists...potential errors on startup otherwise
+              if hasattr(self._ctrl,'get_healthinfo'):
+                  self._alldata = self._ctrl.get_healthinfo()
+
+                  for sub in self._alldata:
+                      if sub['subsystem'] == self._sensor:
+                          self._data = sub
+                          self._state = sub['status'].upper()
+                          for attr in sub:
+                              self._attributes[attr] = sub[attr]
+
+              else:
+                  _LOGGER.error("no healthinfo attribute for controller")
           except APIError as ex:
               _LOGGER.error("Failed to access health info: %s", ex)
-
-          for sub in self._alldata:
-              if sub['subsystem'] == self._sensor:
-                  self._data = sub
-                  self._state = sub['status'].upper()
-                  for attr in sub:
-                      self._attributes[attr] = sub[attr]
