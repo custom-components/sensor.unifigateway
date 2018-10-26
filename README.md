@@ -46,7 +46,7 @@ sensor:
 
 **port**
 
-  (integer)(Optional) THe post of your controller's web interface
+  (integer)(Optional) The port of your controller's web interface
   Default value: 8443
 
 **site_id**
