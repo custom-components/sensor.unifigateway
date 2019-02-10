@@ -21,7 +21,7 @@ from homeassistant.const import (
 from pyunifi.controller import APIError
 
 __version__ = '0.2.0'
-REQUIREMENTS = ['pyunifi==2.15']
+REQUIREMENTS = ['pyunifi==2.16']
 
 _LOGGER = logging.getLogger(__name__)
 
