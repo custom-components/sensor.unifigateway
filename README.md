@@ -1,17 +1,17 @@
 # sensor.unifigateway
 High level health status of UniFi Security Gateway devices via UniFi Controller
   
-[![Version](https://img.shields.io/badge/version-0.1.0-green.svg?style=for-the-badge)](#) [![mantained](https://img.shields.io/maintenance/yes/2018.svg?style=for-the-badge)](#) [![forum](https://img.shields.io/badge/forum-visit-orange.svg?style=for-the-badge)](https://community.home-assistant.io/t/unifi-security-gateway/71505)   
+[![Version](https://img.shields.io/badge/version-0.3.0-green.svg?style=for-the-badge)](#) [![mantained](https://img.shields.io/maintenance/yes/2019.svg?style=for-the-badge)](#) [![forum](https://img.shields.io/badge/forum-visit-orange.svg?style=for-the-badge)](https://community.home-assistant.io/t/unifi-security-gateway/71505)   
 
 Connects to a Ubiquiti Controller instance to monitor high level health information on the setup including alerts and firmware updates
 
 To get started download
 ```
-/custom_components/sensor/unifigateway.py
+/custom_components/unifigateway/sensor.py
 ```
 into
 ```
-<config directory>/custom_components/sensor/unifigateway.yaml
+<config directory>/custom_components/unifigateway/sensor.yaml
 ```
 
 **Example configuration.yaml:**
@@ -56,7 +56,7 @@ sensor:
 
 **verify_ssl**
 
-  (boolean or filename)(Optional) Whether to do strict validation on SSL certificates of the Unifi controller. This can be true/false or the path to a locally trusted certificate to use for verification.
+  (boolean or filename)(Optional) Whether to do strict validation on SSL certificates of the UniFi controller. This can be true/false or the path to a locally trusted certificate to use for verification.
   Default value: false
 
 **monitored_conditions**
