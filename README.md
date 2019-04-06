@@ -11,7 +11,7 @@ To get started download
 ```
 into
 ```
-<config directory>/custom_components/sensor/unifigateway.yaml
+<config directory>/custom_components/unifigateway/sensor.py
 ```
 
 **Example configuration.yaml:**
