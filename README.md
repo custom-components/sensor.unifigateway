@@ -7,11 +7,13 @@ Connects to a Ubiquiti Controller instance to monitor high level health informat
 
 To get started download
 ```
+/custom_components/unifigateway/manifest.json
+/custom_components/unifigateway/__init__.py
 /custom_components/unifigateway/sensor.py
 ```
 into
 ```
-<config directory>/custom_components/unifigateway/sensor.py
+<config directory>/custom_components/unifigateway/
 ```
 
 **Example configuration.yaml:**
