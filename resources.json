@@ -1,0 +1,4 @@
+[
+  "https://raw.githubusercontent.com/custom-components/sensor.unifigateway/master/custom_components/unifigateway/manifest.json",
+  "https://raw.githubusercontent.com/custom-components/sensor.unifigateway/master/custom_components/unifigateway/__init__.py"
+]
