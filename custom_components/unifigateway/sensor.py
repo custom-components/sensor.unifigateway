@@ -18,7 +18,7 @@ from homeassistant.const import (
     CONF_NAME, CONF_HOST, CONF_USERNAME, CONF_PASSWORD,
     CONF_MONITORED_CONDITIONS, CONF_VERIFY_SSL)
 
-__version__ = '0.2.2'
+__version__ = '0.2.3'
 
 _LOGGER = logging.getLogger(__name__)
 
