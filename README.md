@@ -1,7 +1,7 @@
 # sensor.unifigateway
 High level health status of UniFi Security Gateway devices via UniFi Controller
   
-[![Version](https://img.shields.io/badge/version-0.2.1-green.svg?style=for-the-badge)](#) [![mantained](https://img.shields.io/maintenance/yes/2019.svg?style=for-the-badge)](#) [![forum](https://img.shields.io/badge/forum-visit-orange.svg?style=for-the-badge)](https://community.home-assistant.io/t/unifi-security-gateway/71505)   
+[![Version](https://img.shields.io/badge/version-0.2.3-green.svg?style=for-the-badge)](#) [![mantained](https://img.shields.io/maintenance/yes/2019.svg?style=for-the-badge)](#) [![forum](https://img.shields.io/badge/forum-visit-orange.svg?style=for-the-badge)](https://community.home-assistant.io/t/unifi-security-gateway/71505)   
 
 Connects to a Ubiquiti Controller instance to monitor high level health information on the setup including alerts and firmware updates
 
