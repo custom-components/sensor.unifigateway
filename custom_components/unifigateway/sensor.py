@@ -130,17 +130,18 @@ class UnifiGatewaySensor(Entity):
         from pyunifi.controller import APIError
 
         if self._sensor == SENSOR_ALERTS:
+          self._attributes = {}
+
           try:
               unarchived_alerts = self._ctrl.get_alerts()
           except APIError as ex:
               _LOGGER.error("Failed to access alerts info: %s", ex)
+          else:
+              for index, alert in enumerate(unarchived_alerts,start=1):
+                  if not alert['archived']:
+                  self._attributes[str(index)] = alert
 
-          self._attributes = {}
-          for index, alert in enumerate(unarchived_alerts,start=1):
-            if not alert['archived']:
-              self._attributes[str(index)] = alert
-
-          self._state = len(self._attributes)
+              self._state = len(self._attributes)
 
         elif self._sensor == SENSOR_FIRMWARE:
           self._attributes = {}
