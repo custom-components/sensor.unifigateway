@@ -143,19 +143,20 @@ class UnifiGatewaySensor(Entity):
           self._state = len(self._attributes)
 
         elif self._sensor == SENSOR_FIRMWARE:
+          self._attributes = {}
+          self._state = 0
+            
           try:
             aps = self._ctrl.get_aps()
           except APIError as ex:
             _LOGGER.error("Failed to scan aps: %s", ex)
-
-          # Set the attributes based on device name - this may not be unique
-          # but is user-readability preferred
-          self._attributes = {}
-          self._state = 0
-          for devices in aps:
-            if devices.get('upgradable'):
-                self._attributes[devices['name']] = devices['upgradable']
-                self._state += 1
+          else:
+            # Set the attributes based on device name - this may not be unique
+            # but is user-readability preferred
+            for devices in aps:
+              if devices.get('upgradable'):
+                  self._attributes[devices['name']] = devices['upgradable']
+                  self._state += 1
 
         else:
           # get_healthinfo() call made for each of 4 sensors - should only be for 1
