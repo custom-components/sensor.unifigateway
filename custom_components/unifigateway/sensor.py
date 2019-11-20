@@ -139,7 +139,7 @@ class UnifiGatewaySensor(Entity):
           else:
               for index, alert in enumerate(unarchived_alerts,start=1):
                   if not alert['archived']:
-                  self._attributes[str(index)] = alert
+                      self._attributes[str(index)] = alert
 
               self._state = len(self._attributes)
 
