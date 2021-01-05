@@ -51,6 +51,10 @@ sensor:
   (integer)(Optional) The port of your controller's web interface
   Default value: 8443
 
+**version**
+  (string)(Optional) Can be set to 'v4' or 'unifiOS' 
+  Default value: v5
+
 **site_id**
 
   (string)(Optional) For multisite installations, you can specify site_id to specify which is used
