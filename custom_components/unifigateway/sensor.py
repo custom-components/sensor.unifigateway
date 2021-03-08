@@ -28,7 +28,7 @@ CONF_UNIFI_VERSION = 'version'
 
 DEFAULT_NAME = 'UniFi Gateway'
 DEFAULT_HOST = 'localhost'
-DEFAULT_PORT = 8443
+DEFAULT_PORT = 443
 DEFAULT_UNIFI_VERSION = 'v5'
 DEFAULT_SITE = 'default'
 DEFAULT_VERIFY_SSL = False
@@ -53,7 +53,7 @@ USG_SENSORS = {
     SENSOR_FIRMWARE:['Firmware Upgradable', '', 'mdi:database-plus']
 }
 
-POSSIBLE_MONITORED = [ SENSOR_VPN, SENSOR_WWW, SENSOR_WAN, SENSOR_LAN, 
+POSSIBLE_MONITORED = [ SENSOR_VPN, SENSOR_WWW, SENSOR_WAN, SENSOR_LAN,
                         SENSOR_WLAN, SENSOR_ALERTS, SENSOR_FIRMWARE ]
 DEFAULT_MONITORED = POSSIBLE_MONITORED
 
@@ -63,9 +63,9 @@ PLATFORM_SCHEMA = PLATFORM_SCHEMA.extend({
     vol.Optional(CONF_SITE_ID, default=DEFAULT_SITE): cv.string,
     vol.Required(CONF_PASSWORD): cv.string,
     vol.Required(CONF_USERNAME): cv.string,
-    vol.Optional(CONF_UNIFI_VERSION, default=DEFAULT_UNIFI_VERSION): cv.string, 
+    vol.Optional(CONF_UNIFI_VERSION, default=DEFAULT_UNIFI_VERSION): cv.string,
     vol.Optional(CONF_PORT, default=DEFAULT_PORT): cv.port,
-    vol.Optional(CONF_VERIFY_SSL, default=DEFAULT_VERIFY_SSL): 
+    vol.Optional(CONF_VERIFY_SSL, default=DEFAULT_VERIFY_SSL):
         vol.Any(cv.boolean, cv.isfile),
     vol.Optional(CONF_MONITORED_CONDITIONS, default=DEFAULT_MONITORED):
         vol.All(cv.ensure_list, [vol.In(POSSIBLE_MONITORED)])
@@ -150,7 +150,7 @@ class UnifiGatewaySensor(Entity):
         elif self._sensor == SENSOR_FIRMWARE:
           self._attributes = {}
           self._state = 0
-            
+
           try:
             aps = self._ctrl.get_aps()
           except APIError as ex:
