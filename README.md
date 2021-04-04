@@ -49,7 +49,7 @@ sensor:
 **port**
 
   (integer)(Optional) The port of your controller's web interface
-  Default value: 8443
+  Default value: 443
 
 **version**
   (string)(Optional) Can be set to 'v4' or 'unifiOS' 
