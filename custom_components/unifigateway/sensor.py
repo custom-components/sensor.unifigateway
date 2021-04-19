@@ -18,7 +18,7 @@ from homeassistant.const import (
     CONF_NAME, CONF_HOST, CONF_USERNAME, CONF_PASSWORD,
     CONF_MONITORED_CONDITIONS, CONF_VERIFY_SSL)
 
-__version__ = '0.3.2'
+__version__ = '0.3.4'
 
 _LOGGER = logging.getLogger(__name__)
 
@@ -28,7 +28,7 @@ CONF_UNIFI_VERSION = 'version'
 
 DEFAULT_NAME = 'UniFi Gateway'
 DEFAULT_HOST = 'localhost'
-DEFAULT_PORT = 443
+DEFAULT_PORT = 8443
 DEFAULT_UNIFI_VERSION = 'v5'
 DEFAULT_SITE = 'default'
 DEFAULT_VERIFY_SSL = False
