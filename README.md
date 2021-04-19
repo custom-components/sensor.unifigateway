@@ -1,7 +1,7 @@
 # sensor.unifigateway
 High level health status of UniFi Security Gateway devices via UniFi Controller
   
-[![Version](https://img.shields.io/badge/version-0.3.2-green.svg?style=for-the-badge)](#) [![mantained](https://img.shields.io/maintenance/yes/2021.svg?style=for-the-badge)](#) [![forum](https://img.shields.io/badge/forum-visit-orange.svg?style=for-the-badge)](https://community.home-assistant.io/t/unifi-security-gateway/71505)   
+[![Version](https://img.shields.io/badge/version-0.3.3-green.svg?style=for-the-badge)](#) [![mantained](https://img.shields.io/maintenance/yes/2021.svg?style=for-the-badge)](#) [![forum](https://img.shields.io/badge/forum-visit-orange.svg?style=for-the-badge)](https://community.home-assistant.io/t/unifi-security-gateway/71505)   
 
 Connects to a Ubiquiti Controller instance to monitor high level health information on the setup including alerts and firmware updates
 
@@ -48,11 +48,11 @@ sensor:
 
 **port**
 
-  (integer)(Optional) The port of your controller's web interface
+  (integer)(Optional) The port of your controller's web interface - this differs deopending on version - use 443 for UDMP-unifiOS
   Default value: 8443
 
 **version**
-  (string)(Optional) Can be set to 'v4' or 'unifiOS' 
+  (string)(Optional) Can also  be set to 'v4' or 'UDMP-unifiOS' 
   Default value: v5
 
 **site_id**
